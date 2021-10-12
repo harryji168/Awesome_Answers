@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get('/',{to:'welcome#index'})
+  get('/',{to:'welcome#index' , as: 'root'})
   get('/goodbye',{to:'welcome#goodbye', as: :goodbye})
   get('/form_example',{to:'welcome#form_example'})
   post('/form_example',{to:'welcome#thankyou'})
@@ -23,4 +23,11 @@ Rails.application.routes.draw do
     
   end
 
+  resources :users, only:[:new, :create]
+  resource :session, only: [:new, :create, :destroy]
+  # `resource` is singular instead of `resources`
+  # Unlike `resources`, `resource` will create routes that do CRUD opreation
+  # on only one thing. Also there will be no index reoutes, and no route will
+  # have an `:id` wildcard. but the controller name is still plural
+  #sessions also work
 end

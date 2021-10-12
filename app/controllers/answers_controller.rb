@@ -1,5 +1,6 @@
 class AnswersController < ApplicationController
     before_action :find_question 
+    before_action :authenticate_user!
     # destroy create
     def create
         @answer  = Answer.new(answer_params)

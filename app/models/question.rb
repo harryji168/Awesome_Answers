@@ -4,6 +4,8 @@ class Question < ApplicationRecord
     
     has_many :answers, dependent: :destroy
 
+    belongs_to :user
+
     validates :title, presence: {message: "must be provided"}, uniqueness: {scope: :body}, length: { minimum: 2, maximum: 200 }
 
     #unique to the scope of body means title doesn't need to be unique 
