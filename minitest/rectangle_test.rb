@@ -7,7 +7,9 @@ class RectangleTest < MiniTest::Test
         # GIVEN
         rectangle = Rectangle.new(2, 10)
         # WHEN
-        
+        area = rectangle.area
+        # THEN
+        assert_equal(20, area)
     end
     
 
