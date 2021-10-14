@@ -20,5 +20,14 @@ class VectorTest < MiniTest::Test
         # 2 the actual value our code returned
 
     end
+
+    def test_to_s
+        # GIVEN 
+        vector = Vector.new(1, 1)
+        # WHEN
+        to_s = vector.to_s
+        # THEN
+        assert_equal("Vector (1, 1)", to_s)        
+    end
     
 end
