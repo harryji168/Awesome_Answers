@@ -9,7 +9,6 @@ class Ability
     if user.is_admin?
       can :manage, :all  # manage means they can do everything (not just CRUD)
     end
-    #   user ||= User.new # guest user (not logged in)
     #   if user.admin?
     #     can :manage, :all
     #   else
@@ -33,5 +32,19 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+    alias_action(:create, :read, :update, :destroy, to: :crud)
+
+    can(:crud, Question) do |question|
+      user == question.user
+    end
+
+    can(:crud, Answer) do |answer|
+      user == answer.user
+    end
+    
+    can(:crud, JobPost) do |job_post|
+      user == job_post.user
+    end
+
   end
 end

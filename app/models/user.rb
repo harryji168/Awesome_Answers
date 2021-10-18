@@ -6,5 +6,6 @@ class User < ApplicationRecord
     # it will add two attribute accessor for `passowrd` and `password_confirmation`
     has_many :answers, dependent: :destroy
     has_many :questions, dependent: :destroy
+    has_many :job_posts, dependent: :destroy
     validates :first_name,:last_name,:email,:password,  presence: true
 end
