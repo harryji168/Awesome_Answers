@@ -19,6 +19,20 @@ class Question < ApplicationRecord
     # for regular validations.
     validate :no_monkey
 
+    # has_and_belongs_to_many(
+    #     :likes,
+    #     {
+    #         class_name:'User',
+    #         join_table: 'likes',
+    #         association_foreign_key: 'user_id',
+    #         foreign_key: 'question_id'
+    #     }
+    # )
+    # :class_name => the model that the association points to
+    # :join_table => the join table used to create this association
+    # :foreign_key => on the join table, which foreign key points to this current model
+    # : association_foreign_key => on the join table, which foreign key points the associated table
+
     def no_monkey
         # &. is the safe navigation operator. It's used like . operator
         # to call methods of the object
