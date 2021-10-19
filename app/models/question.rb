@@ -33,6 +33,15 @@ class Question < ApplicationRecord
     # :foreign_key => on the join table, which foreign key points to this current model
     # : association_foreign_key => on the join table, which foreign key points the associated table
 
+
+    has_many :likes, dependent: :destroy
+    has_many :likers, through: :likes, source: :user
+    
+
+     # The has_may can take an argument `through` => `:likes` is the name of 
+    # another has_association => `has_many :likes`
+
+
     def no_monkey
         # &. is the safe navigation operator. It's used like . operator
         # to call methods of the object

@@ -17,6 +17,7 @@ class QuestionsController < ApplicationController
     def show
         @answers = @question.answers.order(created_at: :desc)
         @answer = Answer.new
+        @like = @question.likes.find_by(user: current_user)
     end
     
     def destroy
@@ -58,8 +59,13 @@ class QuestionsController < ApplicationController
     end
     
 
+    def liked
+      @questions = current_user.liked_questions
+    end
+    
 
     private 
+   
 
     def find_question
         @question = Question.find params[:id]

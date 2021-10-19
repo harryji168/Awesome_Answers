@@ -19,4 +19,9 @@ class User < ApplicationRecord
     #         foreign_key: 'user_id'
     #     }
     # )
+
+    has_many :likes, dependent: :destroy
+    has_many :liked_questions, through: :likes, source: :question
+    
+
 end
