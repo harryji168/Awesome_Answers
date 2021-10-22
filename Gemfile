@@ -36,6 +36,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
+  
+
 end
 
 group :development do
@@ -50,6 +52,9 @@ group :development do
   gem 'cowsay', '~> 0.3.0'
   gem 'faker'
   #gem 'bootstrap', '~> 5.1'
+  gem 'letter_opener'
+  gem 'delayed_job_active_record'
+  gem 'delayed_job_web'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
