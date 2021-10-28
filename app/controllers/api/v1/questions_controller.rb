@@ -22,9 +22,9 @@ class Api::V1::QuestionsController < ApplicationController
         # based on the id of the user requset, delete that question
         question = Question.find(params[:id])
         if question.destroy
-            
+            render(json:{status:200})
         else
-
+            render(json:{status:500})
         end
     end
 end
