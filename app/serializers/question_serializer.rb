@@ -23,7 +23,7 @@ class QuestionSerializer < ActiveModel::Serializer
       object.likes.count
     end
 
-    has_many :answers
+  has_many :answers
   class AnswerSerializer < ActiveModel::Serializer
     attributes(
       :id,:body,:created_at,:updated_at
@@ -35,6 +35,8 @@ class QuestionSerializer < ActiveModel::Serializer
     attributes(
       :id,:first_name,:last_name,:email
     )
+    
+
   end
 
   
