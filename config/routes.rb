@@ -89,6 +89,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       # /api/v1/questions
       resources :questions
+      resource :session, only: [:create, :destroy]
     end
   end
 end
