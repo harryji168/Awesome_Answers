@@ -20,5 +20,11 @@ class Api::V1::QuestionsController < ApplicationController
     
     def destroy
         # based on the id of the user requset, delete that question
+        question = Question.find(params[:id])
+        if question.destroy
+            
+        else
+
+        end
     end
 end
