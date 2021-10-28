@@ -22,6 +22,21 @@ class QuestionSerializer < ActiveModel::Serializer
       # object refers to the instance of the model being serialized. Kind of like `this` in JS, or `self` in ruby.
       object.likes.count
     end
+
+    has_many :answers
+  class AnswerSerializer < ActiveModel::Serializer
+    attributes(
+      :id,:body,:created_at,:updated_at
+    )
+  end
+
+  belongs_to :user, key: :author
+  class UserSerializer < ActiveModel::Serializer
+    attributes(
+      :id,:first_name,:last_name,:email
+    )
+  end
+
   
   end
   
