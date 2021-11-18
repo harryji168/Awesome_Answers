@@ -31,6 +31,7 @@ gem 'bootstrap', '~> 4.6.0'
 gem 'selectize-rails'
 gem 'active_model_serializers'
 gem 'rack-cors'
+gem 'omniauth-github', '~> 1.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
