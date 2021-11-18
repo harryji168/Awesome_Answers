@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   # a GET request with the URL '/', handle it with the
   # WelcomeController with the index action inside that
   # controller.
+
+  
   get('/', {to: 'welcome#index', as: 'root'})
   get('/goodbye',{to:'welcome#goodbye', as: :goodbye})
   get('/form_example',{to:'welcome#form_example'})
