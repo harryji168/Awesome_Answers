@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   # WelcomeController with the index action inside that
   # controller.
 
+  get "/auth/github", as: :sign_in_with_github
+  get "auth/:provider/callback", to: "callbacks#index"
   
+  get 'callbacks/index'
+
   get('/', {to: 'welcome#index', as: 'root'})
   get('/goodbye',{to:'welcome#goodbye', as: :goodbye})
   get('/form_example',{to:'welcome#form_example'})
