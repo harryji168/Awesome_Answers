@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'callbacks/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
  
   # when people typed "localhost:3000" 
@@ -13,7 +14,6 @@ Rails.application.routes.draw do
   get "/auth/github", as: :sign_in_with_github
   get "auth/:provider/callback", to: "callbacks#index"
   
-  get 'callbacks/index'
 
   get('/', {to: 'welcome#index', as: 'root'})
   get('/goodbye',{to:'welcome#goodbye', as: :goodbye})
